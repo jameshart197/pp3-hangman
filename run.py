@@ -44,7 +44,7 @@ def main():
     word = get_random_word()
     guessed_letters  = []
 
-    print_dashed_word(word)
+    print_blanked_word(word)
 
 
 main()
