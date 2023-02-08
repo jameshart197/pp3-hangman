@@ -14,3 +14,17 @@ Game is over when either:
     The user has guessed all the letters in the word
     OR the user has reached the maximum number of 'FAILS'
 """
+
+
+def get_random_word()
+"""
+Pick a random word from the list of random words and return it
+Returns:
+    string: A random word.
+"""
+
+return "Cherry"
+
+
+
+    
