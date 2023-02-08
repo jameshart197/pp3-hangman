@@ -10,4 +10,7 @@ Inform the user:
     'Fails' remaining
     Letters guessed
     State of word (eg. A P P _ E)
+Game is over when either:
+    The user has guessed all the letters in the word
+    OR the user has reached the maximum number of 'FAILS'
 """
