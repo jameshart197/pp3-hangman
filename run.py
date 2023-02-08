@@ -26,7 +26,7 @@ def get_random_word():
     return "Cherry"
 
 
-def print_blanked_word(word):
+def print_blanked_word(word, guessed_letters):
     """
     Given a word, print it as underscores or blanks.
     If a letter has been guessed correctly, show it within the word.
@@ -35,7 +35,10 @@ def print_blanked_word(word):
     blanked_word = ""
 
     for letter in word:
-        blanked_word += " _"
+        if letter in guessed_letters:
+            blanked_word += f" {letter}"
+        else:
+            blanked_word += " _"
     print(blanked_word)
 
 
