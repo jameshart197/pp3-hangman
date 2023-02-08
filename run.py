@@ -46,11 +46,11 @@ def get_user_guess(guessed_letters):
     """
     Get a valid user guess
     
-    Validations: 
+    Validations:
         Single letter
         Not already guessed
 
-    Returns: 
+    Returns:
         string: a single letter
     """
 
@@ -86,6 +86,8 @@ def main():
     while (num_incorrect_guesses < MAX_INCORRECT_GUESSES):
 
         user_guess = get_user_guess(guessed_letters)
+        if (user_guess not in word):
+            num_incorrect_guesses += 1
 
         guessed_letters.append(user_guess)
 
