@@ -42,6 +42,34 @@ def print_blanked_word(word, guessed_letters):
     print(blanked_word)
 
 
+def get_user_guess(guessed_letters):
+    """
+    Get a valid user guess
+    
+    Validations: 
+        Single letter
+        Not already guessed
+
+    Returns: 
+        string: a single letter
+    """
+
+    while True: 
+        user_guess = input("Guess a letter: ")
+
+        if not user_guess.isalpha():
+            print("Please enter a single letter.")
+            continue
+
+        if user_guess in guessed_letters:
+            print("You have already guessed that letter.")
+            continue
+    
+        break
+
+    return user_guess
+
+
 def main():
     """
     Runs the game
@@ -51,7 +79,7 @@ def main():
     word = get_random_word()
     guessed_letters = []
 
-    print_blanked_word(word)
+    print_blanked_word(word, guessed_letters)
 
 
 main()
