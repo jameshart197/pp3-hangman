@@ -70,6 +70,18 @@ def get_user_guess(guessed_letters):
     return user_guess
 
 
+def characters_not_guessed(word, characters):
+    """
+    Defines number of characters not guessed and counts down to 0
+    """
+    count = len(word)
+    print(count)
+    for letter in word:
+        if (letter not in characters):
+            count -= 1
+    return count
+
+
 def main():
     """
     Runs the game
@@ -83,7 +95,7 @@ def main():
 
     print_blanked_word(word, guessed_letters)
 
-    while (num_incorrect_guesses < MAX_INCORRECT_GUESSES):
+    while (num_incorrect_guesses < MAX_INCORRECT_GUESSES) or (characters_not_guessed(word, guessed_letters) > 0):
 
         user_guess = get_user_guess(guessed_letters)
         if (user_guess not in word):
@@ -92,7 +104,13 @@ def main():
         guessed_letters.append(user_guess)
 
         print(guessed_letters)
+        characters_not_guessed(word, guessed_letters)
         print_blanked_word(word, guessed_letters)
+    
+    if (num_incorrect_guesses == MAX_INCORRECT_GUESSES):
+        print(f"Game over, you ran out of guesses.\n The answer was {word}")
+    else:
+        print(f"Victory, you guessed the word! The word was {word}")
 
 
 main()
