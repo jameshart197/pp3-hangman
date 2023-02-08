@@ -5,7 +5,7 @@ Ask user to guess a letter
 If the letter is in the word, show the letter in blanked word.
 If the letter is not in the word, flag a 'Fail'
     User has a maximum number of 'Fails'
-Inform the user: 
+Inform the user:
     Maximum 'Fails'
     'Fails' remaining
     Letters guessed
@@ -29,20 +29,24 @@ def get_random_word():
 def print_blanked_word(word):
     """
     Given a word, print it as underscores or blanks.
-    If a letter has been guessed correctly, show it within the word. 
+    If a letter has been guessed correctly, show it within the word.
     """
 
     blanked_word = ""
 
     for letter in word:
-        blanked_word += "_"
+        blanked_word += " _"
+    print(blanked_word)
 
 
 def main():
+    """
+    Runs the game
+    """
     print("Welcome to Hangman!")
 
     word = get_random_word()
-    guessed_letters  = []
+    guessed_letters = []
 
     print_blanked_word(word)
 
