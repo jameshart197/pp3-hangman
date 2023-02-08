@@ -16,15 +16,12 @@ Game is over when either:
 """
 
 
-def get_random_word()
-"""
-Pick a random word from the list of random words and return it
-Returns:
-    string: A random word.
-"""
+def get_random_word():
+    """
+    Pick a random word from the list of random words and return it
+    Returns:
+        string: A random word.
+    """
 
-return "Cherry"
+    return "Cherry"
 
-
-
-    
