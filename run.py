@@ -57,7 +57,7 @@ def get_user_guess(guessed_letters):
     while True: 
         user_guess = input("Guess a letter: ")
 
-        if not user_guess.isalpha():
+        if not user_guess.isalpha() or len(user_guess) > 1:
             print("Please enter a single letter.")
             continue
 
@@ -78,8 +78,19 @@ def main():
 
     word = get_random_word()
     guessed_letters = []
+    num_incorrect_guesses = 0
+    MAX_INCORRECT_GUESSES = 3
 
     print_blanked_word(word, guessed_letters)
+
+    while (num_incorrect_guesses < MAX_INCORRECT_GUESSES):
+
+        user_guess = get_user_guess(guessed_letters)
+
+        guessed_letters.append(user_guess)
+
+        print(guessed_letters)
+        print_blanked_word(word, guessed_letters)
 
 
 main()
