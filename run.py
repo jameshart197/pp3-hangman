@@ -36,3 +36,15 @@ def print_blanked_word(word):
 
     for letter in word:
         blanked_word += "_"
+
+
+def main():
+    print("Welcome to Hangman!")
+
+    word = get_random_word()
+    guessed_letters  = []
+
+    print_dashed_word(word)
+
+
+main()
