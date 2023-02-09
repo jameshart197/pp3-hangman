@@ -1,3 +1,5 @@
+import random
+
 """
 When user arrives, pick random word and show in blanks (underscores; _ _ _ _)
 Ask user to guess a letter
@@ -15,15 +17,24 @@ Game is over when either:
     OR the user has reached the maximum number of 'FAILS'
 """
 
+"""
+Open words.txt and make a list from all the words in it
+"""
 
-def get_random_word():
+
+with open("words.txt") as f:
+    word_list = []
+    word_list = f.read().splitlines()
+    random.shuffle(word_list)
+
+
+def get_random_word(index):
     """
     Pick a random word from the list of random words and return it
     Returns:
         string: A random word.
     """
-
-    return "Cherry"
+    return word_list[index]
 
 
 def print_blanked_word(word, guessed_letters):
@@ -74,11 +85,10 @@ def characters_not_guessed(word, characters):
     """
     Defines number of characters not guessed and counts down to 0
     """
-    count = len(word)
-    print(count)
+    count = 0
     for letter in word:
         if (letter not in characters):
-            count -= 1
+            count += 1
     return count
 
 
@@ -87,15 +97,16 @@ def main():
     Runs the game
     """
     print("Welcome to Hangman!")
-
-    word = get_random_word()
+    
+    MAX_INCORRECT_GUESSES = 3
+    current_index = 0
+    word = get_random_word(current_index)
     guessed_letters = []
     num_incorrect_guesses = 0
-    MAX_INCORRECT_GUESSES = 3
 
     print_blanked_word(word, guessed_letters)
-
-    while (num_incorrect_guesses < MAX_INCORRECT_GUESSES) or (characters_not_guessed(word, guessed_letters) > 0):
+    
+    while (num_incorrect_guesses < MAX_INCORRECT_GUESSES) and (characters_not_guessed(word, guessed_letters) > 0):
 
         user_guess = get_user_guess(guessed_letters)
         if (user_guess not in word):
