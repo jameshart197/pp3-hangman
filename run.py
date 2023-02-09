@@ -81,6 +81,23 @@ def get_user_guess(guessed_letters):
     return user_guess
 
 
+def play_again():
+    """
+    Find out if the user wishes to play again
+        returns: True/False
+    """
+    while True:
+        user_response = input("Do you want to play again? (Y or N?): ")
+
+        if not user_response.isalpha() or len(user_response) > 1: 
+            print("Please enter Y or N")
+            continue
+
+        break
+
+    return user_response == "Y"
+
+
 def characters_not_guessed(word, characters):
     """
     Defines number of characters not guessed and counts down to 0
@@ -120,8 +137,10 @@ def main():
     
     if (num_incorrect_guesses == MAX_INCORRECT_GUESSES):
         print(f"Game over, you ran out of guesses.\n The answer was {word}")
+        play_again()
     else:
         print(f"Victory, you guessed the word! The word was {word}")
+        play_again()
 
 
 main()
