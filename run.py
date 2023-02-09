@@ -17,10 +17,6 @@ Game is over when either:
     OR the user has reached the maximum number of 'FAILS'
 """
 
-"""
-Open words.txt and make a list from all the words in it
-"""
-
 
 with open("words.txt") as f:
     word_list = []
@@ -56,7 +52,6 @@ def print_blanked_word(word, guessed_letters):
 def get_user_guess(guessed_letters):
     """
     Get a valid user guess
-    
     Validations:
         Single letter
         Not already guessed
@@ -65,7 +60,7 @@ def get_user_guess(guessed_letters):
         string: a single letter
     """
 
-    while True: 
+    while True:
         user_guess = input("Guess a letter: ")
 
         if not user_guess.isalpha() or len(user_guess) > 1:
@@ -75,7 +70,7 @@ def get_user_guess(guessed_letters):
         if user_guess in guessed_letters:
             print("You have already guessed that letter.")
             continue
-    
+
         break
 
     return user_guess
@@ -87,7 +82,7 @@ def characters_not_guessed(word, characters):
     """
     count = 0
     for letter in word:
-        if (letter not in characters):
+        if letter not in characters:
             count += 1
     return count
 
@@ -97,7 +92,7 @@ def main():
     Runs the game
     """
     print("Welcome to Hangman!")
-    
+
     MAX_INCORRECT_GUESSES = 3
     current_index = 0
     word = get_random_word(current_index)
@@ -105,11 +100,11 @@ def main():
     num_incorrect_guesses = 0
 
     print_blanked_word(word, guessed_letters)
-    
+
     while (num_incorrect_guesses < MAX_INCORRECT_GUESSES) and (characters_not_guessed(word, guessed_letters) > 0):
 
         user_guess = get_user_guess(guessed_letters)
-        if (user_guess not in word):
+        if user_guess not in word:
             num_incorrect_guesses += 1
 
         guessed_letters.append(user_guess)
@@ -117,8 +112,8 @@ def main():
         print(guessed_letters)
         characters_not_guessed(word, guessed_letters)
         print_blanked_word(word, guessed_letters)
-    
-    if (num_incorrect_guesses == MAX_INCORRECT_GUESSES):
+
+    if num_incorrect_guesses == MAX_INCORRECT_GUESSES:
         print(f"Game over, you ran out of guesses.\n The answer was {word}")
     else:
         print(f"Victory, you guessed the word! The word was {word}")
