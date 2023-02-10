@@ -1,5 +1,7 @@
 import random
 
+MAX_INCORRECT_GUESSES = 3
+
 with open("words.txt") as f:
     word_list = []
     word_list = f.read().splitlines()
@@ -69,24 +71,6 @@ def characters_not_guessed(word, characters):
     return count
 
 
-def main():
-    """
-    Runs the game
-    """
-    print("Welcome to Hangman!")
-
-    MAX_INCORRECT_GUESSES = 3
-    keep_playing = True
-    current_index = 0
-    while keep_playing:
-        word = get_random_word(current_index)
-        run_game(word)
-        play_again = input("Enter 'Y' to play again or anything else to exit").strip().upper()
-        if play_again == "Y":
-            current_index += 1
-        else:
-            exit()
-
 def run_game(word):
     guessed_letters = []
     num_incorrect_guesses = 0
@@ -110,5 +94,22 @@ def run_game(word):
     else:
         print(f"Victory, you guessed the word! The word was {word}")
 
+
+def main():
+    """
+    Runs the game
+    """
+    print("Welcome to Hangman!")
+
+    keep_playing = True
+    current_index = 0
+    while keep_playing:
+        word = get_random_word(current_index)
+        run_game(word)
+        play_again = input("Enter 'Y' to play again or anything else to exit:\n").strip().upper()
+        if play_again == "Y":
+            current_index += 1
+        else:
+            keep_playing = False
 
 main()
