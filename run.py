@@ -1,23 +1,5 @@
 import random
 
-"""
-When user arrives, pick random word and show in blanks (underscores; _ _ _ _)
-Ask user to guess a letter
-    Validate that user has entered one single letter
-If the letter is in the word, show the letter in blanked word.
-If the letter is not in the word, flag a 'Fail'
-    User has a maximum number of 'Fails'
-Inform the user:
-    Maximum 'Fails'
-    'Fails' remaining
-    Letters guessed
-    State of word (eg. A P P _ E)
-Game is over when either:
-    The user has guessed all the letters in the word
-    OR the user has reached the maximum number of 'FAILS'
-"""
-
-
 with open("words.txt") as f:
     word_list = []
     word_list = f.read().splitlines()
@@ -94,8 +76,18 @@ def main():
     print("Welcome to Hangman!")
 
     MAX_INCORRECT_GUESSES = 3
+    keep_playing = True
     current_index = 0
-    word = get_random_word(current_index)
+    while keep_playing:
+        word = get_random_word(current_index)
+        run_game(word)
+        play_again = input("Enter 'Y' to play again or anything else to exit").strip().upper()
+        if play_again == "Y":
+            current_index += 1
+        else:
+            exit()
+
+def run_game(word):
     guessed_letters = []
     num_incorrect_guesses = 0
 
