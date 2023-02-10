@@ -103,8 +103,7 @@ def main():
     keep_playing = True
     current_index = 0
     while keep_playing:
-        word = get_random_word(current_index)
-        print(word)
+        word = get_random_word(current_index).lower()
         run_game(word)
         play_again = input("Enter 'Y' to play again or anything else to exit:\n").strip().upper()
         if play_again == "Y":
