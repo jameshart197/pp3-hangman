@@ -68,6 +68,10 @@ def print_list(list):
     print(separator.join(list).upper())
 
 
+def double_line():
+    print("\n")
+
+
 def letter_not_guessed(word, characters):
     """
     Defines number of characters not guessed and counts down to 0
@@ -84,22 +88,29 @@ def run_game(word):
     fail_count = 0
 
     print_blanked_word(word, guessed_letters)
-    while (fail_count < MAX_INCORRECT_GUESSES) and (letter_not_guessed(word, guessed_letters) > 0):
+    double_line()
+    while (
+        fail_count < MAX_INCORRECT_GUESSES
+        ) and (letter_not_guessed(
+            word, guessed_letters
+            ) > 0):
 
         user_guess = get_user_guess(guessed_letters)
         if user_guess not in word:
             fail_count += 1
 
         guessed_letters.append(user_guess)
-
+        double_line()
         print_list(guessed_letters)
+        double_line()
         letter_not_guessed(word, guessed_letters)
         print_blanked_word(word, guessed_letters)
+        double_line()
 
     if fail_count == MAX_INCORRECT_GUESSES:
-        print(f"Game over, you ran out of guesses.\n The answer was {word}")
+        print(f"Game over, you ran out of guesses.\n \n The answer was {word} \n \n")
     else:
-        print(f"Victory, you guessed the word! The word was {word}")
+        print(f"Victory, you guessed the word! \n \n The word was {word} \n \n")
 
 
 def main():
@@ -107,13 +118,16 @@ def main():
     Runs the game
     """
     print("Welcome to Hangman!")
+    double_line()
 
     keep_playing = True
     current_index = 0
     while keep_playing:
         word = get_random_word(current_index).lower()
         run_game(word)
-        play_again = input("Enter 'Y' to play again or anything else to exit:\n").strip().upper()
+        play_again = input(
+            "Enter 'Y' to play again or anything else to exit:\n"
+            ).strip().upper()
         if play_again == "Y":
             current_index += 1
         else:
