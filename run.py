@@ -60,6 +60,14 @@ def get_user_guess(guessed_letters):
     return user_guess
 
 
+def print_list(list):
+    """
+    Takes a list and separates it with commas"
+    """
+    separator = ', '
+    print(separator.join(list).upper())
+
+
 def letter_not_guessed(word, characters):
     """
     Defines number of characters not guessed and counts down to 0
@@ -84,7 +92,7 @@ def run_game(word):
 
         guessed_letters.append(user_guess)
 
-        print(guessed_letters)
+        print_list(guessed_letters)
         letter_not_guessed(word, guessed_letters)
         print_blanked_word(word, guessed_letters)
 
@@ -110,5 +118,6 @@ def main():
             current_index += 1
         else:
             keep_playing = False
+
 
 main()
