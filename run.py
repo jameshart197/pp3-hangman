@@ -95,6 +95,7 @@ def run_game(word):
     fail_count = 0
 
     print_blanked_word(word, guessed_letters)
+    print(f"\nYou have {MAX_INCORRECT_GUESSES} guesses remaining")
     double_line()
     while (fail_count < MAX_INCORRECT_GUESSES) and (
         letter_not_guessed(word, guessed_letters) > 0
