@@ -1,3 +1,7 @@
+"""
+This is what the program does
+"""
+
 import random
 
 MAX_INCORRECT_GUESSES = 5
@@ -146,4 +150,5 @@ def main():
             keep_playing = False
 
 
-main()
+if __name__ == "__main__":
+    main()
