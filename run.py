@@ -1,7 +1,8 @@
 import random
 
-MAX_INCORRECT_GUESSES = 3
+MAX_INCORRECT_GUESSES = 5
 
+# open words.txt and shuffle randomly
 with open("words.txt", encoding="utf-8") as f:
     word_list = []
     word_list = f.read().splitlines()
@@ -62,7 +63,7 @@ def get_user_guess(guessed_letters):
 
 def print_list(mylist):
     """
-    Takes a list and separates it with commas"
+    Takes a list and separates it with commas
     """
     separator = ", "
     print(separator.join(mylist).upper())
@@ -102,6 +103,8 @@ def run_game(word):
         user_guess = get_user_guess(guessed_letters)
         if user_guess not in word:
             fail_count += 1
+            lives_remaining = MAX_INCORRECT_GUESSES - fail_count
+            print(f"\n Incorrect Guess! Lives remaining = {lives_remaining}")
 
         guessed_letters.append(user_guess)
         double_line()
