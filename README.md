@@ -150,7 +150,7 @@
 ### PEP-8 Validation
 
 <details><summary>Pep-8 Validation</summary>
-<img src="docs/pep9-validation.png">
+<img src="docs/pep8-validation.png">
 </details>
 
 ## Testing
