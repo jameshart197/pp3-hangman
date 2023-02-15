@@ -161,8 +161,7 @@
 | ------------- | ----------------------------- | ---------------------------- | 
 | As a user, I want to run the game, so that I can play | The game starts automatically on run | Functioning | 
 | As a user, I want to easily understand how to play the game | The game begins by guiding you to guess a single letter | Functioning | 
-| As a user, I want to understand which type of input is required, and understand my mistakes if I make an error during input
- | This is covered by feature 4 | Functioning | 
+| As a user, I want to understand which type of input is required, and understand my mistakes if I make an error during input| This is covered by feature 4 | Functioning | 
 | As a user, I want to clearly see the number of incorrect guesses or lives I have remaining | This is covered by feature 3 | Functioning | 
 |As a user, I want to see all currently guessed letters | This is covered by feature 2 | Functioning | 
 | As a user I want to see my progress on the guessed word | This is covered by feature 1 | Functioning | 
