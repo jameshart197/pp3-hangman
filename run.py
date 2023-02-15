@@ -150,5 +150,5 @@ if __name__ == "__main__":
     with open("words.txt", encoding="utf-8") as f:
         word_list = []
         word_list = f.read().splitlines()
-        random.shuffle(word_list)   
+        random.shuffle(word_list)
     main()
