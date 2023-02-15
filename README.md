@@ -45,6 +45,39 @@
 - Returns feedback on why an error occurs
 - Offers the user to play again
 
+## User Experience
+
+### Target Audience
+
+- People interested in simple word guessing games
+- People interested in the Python coding behind the project
+
+### User Stories
+
+1. As a user, I want to run the game, so that I can play
+2. As a user, I want to easily understand how to play the game
+3. As a user, I want to understand which type of input is required, and understand my mistakes if I make an error during input
+4. As a user, I want to clearly see the number of incorrect guesses or lives I have remaining
+5. As a user, I want to see all currently guessed letters
+6. As a user I want to see my progress on the guessed word
+7. As a user I want to be able to see what the word was, even if I didn’t guess it
+8. As a user I want to be able to play again without having to restart the program
+
+## Technologies Used
+
+### Languages
+
+- Python
+
+### Frameworks, Libraries & Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up you can see at the start of this README.md file.
+- [Git](https://git-scm.com/) was used for version control, pushing the code to Github.
+- [GitHub](https://github.com/) was used for remote storage of the repository for the project code.
+- [GitPod](https://gitpod.io/) was used as a coding platform.
+- [Greenshot](https://getgreenshot.org/) was used to create the screenshots in this README.md
+- [Heroku](https://heroku.com) was used to deploy the project.
+- The project also makes use of an HTML, CSS and JS simulated terminal to enable users remote access over the internet.
 
 | **User Story**   | **Feature or Code**                    | **Functionality**          |
 | ------------- | ----------------------------- | ---------------------------- | 
