@@ -85,15 +85,57 @@
 
 1. Prints words in blanked format
     a. Updates when a letter is guessed correctly
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature1.png">
+</details>
+
 2. Prints incorrect guesses		
     a. When an incorrect guess is made, inform user
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature2.png">
+</details>
+
 3. Prints remaining ‘lives’ (incorrect guesses)
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature3.png">
+</details>
+
 4. Validates user guesses and informs them if they have entered an incorrect input
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature4.png">
+</details>
+
 5. Offers user to play again after each round
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature5.png">
+</details>
+
 6. Informs the user if they have won (Victory!) or lost (Game Over!)
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature6.png">
+</details>
+
 7. Informs the user of the correct word, whether they guessed it or not
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature7.png">
+</details>
+
 8. Pulls from a random list of 850 words
     a. Sorts this list, so that there are no repeats when pressing “Play Again”
+
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature8.png">
+</details>
+<details><summary>Feature Demonstration</summary>
+<img src="docs/feature8a.png">
+</details>
 
 
 ### Current Features 
