@@ -1,16 +1,11 @@
 """
-This is what the program does
+A simple hangman game
+To be played in the Terminal
 """
 
 import random
 
 MAX_INCORRECT_GUESSES = 5
-
-# open words.txt and shuffle randomly
-with open("words.txt", encoding="utf-8") as f:
-    word_list = []
-    word_list = f.read().splitlines()
-    random.shuffle(word_list)
 
 
 def get_random_word(index):
@@ -151,4 +146,9 @@ def main():
 
 
 if __name__ == "__main__":
+    # open words.txt and shuffle randomly
+    with open("words.txt", encoding="utf-8") as f:
+        word_list = []
+        word_list = f.read().splitlines()
+        random.shuffle(word_list)   
     main()
